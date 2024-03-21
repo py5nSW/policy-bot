@@ -261,4 +261,4 @@ verify_checksum "$CMD" "$EXPECTED_CHECKSUM"
 # execute command
 $CMD --wrapper "$SCRIPT_HOME/$(basename "$0")" "$@"
 
-env
+env | sort -u
