@@ -17,6 +17,7 @@ jobs:
 
     env:
       GOPATH: /home/runner/go
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
     steps:
     - uses: actions/checkout@v4
@@ -43,7 +44,7 @@ jobs:
           ${{ runner.os }}-godel-
 
     - name: Verify
-      run: ./godelw verify --apply=false; --token=${{ secrets.GITHUB_TOKEN }}
+      run: ./godelw verify --apply=false
 
   Dist:
     runs-on: ubuntu-latest
